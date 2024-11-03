@@ -27,6 +27,12 @@ void sol(int y, int m, int d) {
         cout << -1;
         return;
     }
+
+    if (d == 31 && (m == 2 || m == 4 || m == 6 || m == 9 | m == 11)) {
+        cout << -1;
+        return;
+    }
+    
     if (m >= 3 && m <= 5) cout << "Spring";
     else if (m >= 6 && m <= 8) cout << "Summer";
     else if (m >= 9 && m <= 11) cout << "Fall";
