@@ -19,8 +19,10 @@ int main() {
         else if (s[n] == 'L') {
             dir = (dir+3) / 4;
         }
-        x += dx[dir];
-        y += dy[dir];
+        else if (s[n] == 'F') {
+            x += dx[dir];
+            y += dy[dir];
+        }
     }
     cout << x << " " << y;
     return 0;
