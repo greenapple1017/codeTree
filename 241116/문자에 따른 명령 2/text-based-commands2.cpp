@@ -21,7 +21,7 @@ int main() {
         }
         x += dx[dir];
         y += dy[dir];
-        cout << x << " " << y;
     }
+    cout << x << " " << y;
     return 0;
 }
