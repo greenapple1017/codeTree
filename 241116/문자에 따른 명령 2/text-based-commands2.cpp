@@ -14,10 +14,10 @@ int main() {
     x = y = 0;
     for (size_t n = 0; n < s.length(); n++) {
         if (s[n] == 'R') {
-            dir = (dir+1) / 4;
+            dir = (dir+1) % 4;
         }
         else if (s[n] == 'L') {
-            dir = (dir+3) / 4;
+            dir = (dir+3) % 4;
         }
         else if (s[n] == 'F') {
             x += dx[dir];
