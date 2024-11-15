@@ -6,6 +6,6 @@ int main() {
     int a, b, c;
     char d, e;
     cin >> a >> d >> b >> e >> c;
-    cout << a << d << c << e << b;
+    cout << "010-" << c << "-" << b;
     return 0;
 }
