@@ -14,8 +14,8 @@ int main() {
         cin >> arr[i];
         if (arr[i] < min_val) min_val = arr[i];
     }
-    for (auto i : arr) {
-        if (i == min_val) cnt++;
+    for (auto num : arr) {
+        if (num == min_val) cnt++;
     }
     cout << min_val << " " << cnt;
     return 0;
