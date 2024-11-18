@@ -16,5 +16,6 @@ int main() {
             ans += arr[i][j];
         }
     }
+    cout << ans;
     return 0;
 }
