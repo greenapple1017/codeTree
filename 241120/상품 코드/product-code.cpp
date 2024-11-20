@@ -12,8 +12,9 @@ int main() {
     string name;
     int code;
     cin >> name >> code;
-    Product p{name, code};
-    cout << "product " << p.name << " is codetree\n";
-    cout << "product " << p.code << " is leebros";
+    Product p1{"codetree", 50}, p2{name, code};
+    
+    cout << "product " << p1.code << " is " << p1.name << '\n';
+    cout << "product " << p2.code << " is " << p2.name;
     return 0;
 }
