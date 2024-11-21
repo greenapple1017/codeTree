@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-void sol(int a, int b, int b) {
+void sol(int a, int b, int c) {
     cout << min(min(a,b),c);
 }
 
