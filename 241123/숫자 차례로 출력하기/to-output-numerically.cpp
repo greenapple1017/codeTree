@@ -20,5 +20,7 @@ int main() {
     int n;
     cin >> n;
     PrintAscend(n);
+    cout << endl;
+    PrintDescend(n);
     return 0;
 }
