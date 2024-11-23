@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void Seq(int n) {
+int Seq(int n) {
     if (n == 1) return 1;
     if (n == 2) return 2;
 
