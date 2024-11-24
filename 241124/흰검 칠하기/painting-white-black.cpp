@@ -9,7 +9,7 @@ int tile[MAX_TILE], cnt_tile[MAX_TILE];
 int main() {
     int n;
     cin >> n;
-    int cur = OFFSET;
+    int cur = OFFSET; // 이걸 for문 안에 써놔서 1시간 버렸네..
     for (int i = 0; i < n; i++) {
         int num;
         char dir;
