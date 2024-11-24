@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//#define DEBUG
+
 #define OFFSET 100000
 #define MAX_TILE 200001
 
@@ -16,17 +18,28 @@ int main() {
         cin >> num >> dir;
         if (dir == 'R') {
             for (int j = 0; j < num; j++) {
-                tile[cur+j] = 1; // 1 for black, 0 for white
+                tile[cur+j] = 1; // 1 for black, -1 for white
                 cnt_tile[cur+j]++;
             }
             cur += (num-1);
+            #ifdef DEBUG
+            cout << "cur : " << cur << '\n';
+            cout << "tile[" << cur << "] : " << tile[cur] << '\n';
+            cout << "cnt_tile[" << cur << "] : " << cnt_tile[cur] << '\n';
+            #endif
+
         }
-        else {
+        else if (dir == 'L') {
             for (int j = 0; j < num; j++) {
-                tile[cur-j] = 0; // 1 for black, 0 for white
+                tile[cur-j] = -1; // 1 for black, -1 for white
                 cnt_tile[cur-j]++;
             }
-            cur -= (num-1);            
+            cur -= (num-1);
+            #ifdef DEBUG
+            cout << "cur : " << cur << '\n';
+            cout << "tile[" << cur << "] : " << tile[cur] << '\n';
+            cout << "cnt_tile[" << cur << "] : " << cnt_tile[cur] << '\n';
+            #endif            
         }
     }
     int b = 0, w = 0, g = 0;
@@ -34,7 +47,7 @@ int main() {
         if (cnt_tile[i] >= 4) g++;
         else if (cnt_tile[i] > 0 && cnt_tile[i] < 4) {
             if (tile[i] == 1) b++;
-            else if (tile[i] == 0) w++;
+            else if (tile[i] == -1) w++;
         }
     }
     cout << w << " " << b << " " << g;
