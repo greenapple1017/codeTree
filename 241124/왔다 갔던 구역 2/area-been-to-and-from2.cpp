@@ -22,7 +22,7 @@ int main() {
         }
         else {
             for (int j = 0; j < num; j++) {
-                x_axis[cur-j]++;
+                x_axis[cur-1-j]++;
             }
             cur -= num;            
         }
