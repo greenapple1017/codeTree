@@ -6,12 +6,14 @@ using namespace std;
 #define OFFSET 100000
 #define MAX_TILE 200001
 
-int tile[MAX_TILE], cnt_tile[MAX_TILE];
+int tile[MAX_TILE], cnt_b[MAX_TILE], cnt_w[MAX_TILE];
 
 int main() {
     int n;
     cin >> n;
     int cur = OFFSET; // 이걸 for문 안에 써놔서 1시간 버렸네..
+    // 아 알았다. <검은색 두번, 회색 두번 이렇게 각각 이어야하는구나 그냥 네번이 아니라..
+    // 문제 상황 잘못 이해해서 2시간 넘게 또 날렸네..
     for (int i = 0; i < n; i++) {
         int num;
         char dir;
@@ -19,7 +21,7 @@ int main() {
         if (dir == 'R') {
             for (int j = 0; j < num; j++) {
                 tile[cur+j] = 1; // 1 for black, -1 for white
-                cnt_tile[cur+j]++;
+                cnt_b[cur+j]++;
             }
             cur += (num-1);
             #ifdef DEBUG
@@ -32,7 +34,7 @@ int main() {
         else if (dir == 'L') {
             for (int j = 0; j < num; j++) {
                 tile[cur-j] = -1; // 1 for black, -1 for white
-                cnt_tile[cur-j]++;
+                cnt_w[cur-j]++;
             }
             cur -= (num-1);
             #ifdef DEBUG
@@ -44,8 +46,8 @@ int main() {
     }
     int b = 0, w = 0, g = 0;
     for (int i = 0; i < MAX_TILE; i++) {
-        if (cnt_tile[i] >= 4) g++;
-        else if (cnt_tile[i] > 0 && cnt_tile[i] < 4) {
+        if (cnt_b[i] >= 2 && cnt_w[i] >= 2) g++;
+        else {
             if (tile[i] == 1) b++;
             else if (tile[i] == -1) w++;
         }
