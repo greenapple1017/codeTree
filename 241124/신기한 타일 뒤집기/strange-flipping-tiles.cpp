@@ -25,7 +25,6 @@ int main() {
         else {
             for (int i = 0; i < num; i++) {
                 tile[cur-i] = 2;
-                cur -= i; 
             }         
             cur -= num-1; 
             //cout << "Current position: " << cur << '\n';            
