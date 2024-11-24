@@ -2,6 +2,7 @@
 using namespace std;
 
 #define MAX_X 100000
+#define OFFSET MAX_X
 
 int tile[2*MAX_X - 1];
 
@@ -9,7 +10,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n;
     cin >> n;
-    int cur = 0;
+    int cur = OFFSET;
     while (n--) {
         int num;
         char dir;
@@ -27,7 +28,9 @@ int main() {
                 tile[cur-i] = 2;
             }         
             cur -= num-1; 
-            //cout << "Current position: " << cur << '\n';            
+            //cout << "Current position: " << cur << '\n';  
+            //cout << "tile, idx==-1 " << tile[-1] << endl; 
+            //cout << "tile, idx==3 " << tile[3] << endl;         
         }
     }
     int w = 0, b = 0;
