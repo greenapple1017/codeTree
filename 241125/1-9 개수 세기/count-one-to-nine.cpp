@@ -12,7 +12,7 @@ int main() {
         arr[tmp]++;
     }
     for (int i = 1; i <= 9; i++) {
-        cout << arr[i];
+        cout << arr[i] << '\n';
     }
 
     return 0;
