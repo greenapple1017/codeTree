@@ -10,7 +10,7 @@ int main() {
     cin >> a;
     for (auto i = 0; i < a.length()-1; i++) {
         if (a[i] == '(' && a[i+1] == '(') {
-            for (auto j = 2; j < a.length()-1; j++) {
+            for (auto j = i+2; j < a.length()-1; j++) {
                 if (a[j] == ')' && a[j+1] == ')') ans++;
             }
         }
