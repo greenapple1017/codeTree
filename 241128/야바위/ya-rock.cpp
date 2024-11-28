@@ -13,6 +13,7 @@ int main() {
     // 여기에 코드를 작성해주세요.
     int n;
     cin >> n;
+    arr[n] = 1;
     int ans = 0;
     for (int k = 0; k < 3; k++) {
         int ans_cand = 0;
