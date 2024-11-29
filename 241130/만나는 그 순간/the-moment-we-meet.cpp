@@ -4,6 +4,7 @@ using namespace std;
 #define MAX_N 1000
 #define MAX_T 1000
 
+// OOB gives a runtime error
 int a[MAX_N * MAX_T + 5];
 int b[MAX_N * MAX_T + 5];
 int cur_a, cur_b;
