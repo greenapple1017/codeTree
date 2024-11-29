@@ -59,8 +59,9 @@ int main() {
     for (int i = 1; i <= t_a; i++) {
         if (a[i] == b[i]) {
             cout << i;
-            return 0;
+            return 0; // I put this outside of the if statement...
         }
     }
     cout << -1;
+    return 0;
 }
