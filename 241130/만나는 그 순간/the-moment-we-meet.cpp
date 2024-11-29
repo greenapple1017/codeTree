@@ -1,8 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int a[1005];
-int b[1005];
+#define MAX_N 1000
+#define MAX_T 1000
+
+int a[MAX_N * MAX_T + 5];
+int b[MAX_N * MAX_T + 5];
 int cur_a, cur_b;
 int t_a, t_b;
 
