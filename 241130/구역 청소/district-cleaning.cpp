@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#define MAX_X 101;
+#define MAX_X 101
 
 int x_axis[MAX_X];
 int ans;
