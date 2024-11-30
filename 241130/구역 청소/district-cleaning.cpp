@@ -21,6 +21,6 @@ int main() {
     for (int i = 0; i < MAX_X; i++) {
         if (x_axis[i] != 0) ans++;
     }
-    cout << ans;
+    cout << ans-1;
     return 0;
 }
