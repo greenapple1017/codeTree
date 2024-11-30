@@ -7,7 +7,7 @@ int main() {
     cin >> x1 >> y1 >> x2 >> y2;
     int a1,b1,a2,b2;
     cin >> a1 >> b1 >> a2 >> b2;
-    if (a1 > x2 || b1 > y2) cout << "nonoverlapping";
+    if (a1 > x2 || b1 > y2 || a2 < x1 || b2 > y2) cout << "nonoverlapping";
     else cout << "overlapping";
     return 0;
 }
