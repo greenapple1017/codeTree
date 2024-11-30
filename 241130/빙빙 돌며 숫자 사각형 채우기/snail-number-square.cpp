@@ -13,6 +13,7 @@ int cnt = 1;
 int n,m;
 
 bool InRange(int r, int c) {
+    // At first I wrote r > 0.
     return (r >= 0 && r < n && c >= 0 && c < m);
 }
 
