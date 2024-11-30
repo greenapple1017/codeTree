@@ -52,7 +52,7 @@ int main() {
         int x = arr_time[i].x;
         int y = arr_time[i].y;
         // Skip if no handshaking
-        if (x == 0) {
+        if (x == 0 && y == 0) {
             continue;
         }
         // 둘 다 감염되고 전염성도 있는 경우
