@@ -12,7 +12,7 @@ struct Student{
 
 Student students[15];
 
-bool Cmp(Student &a, Student &b) {
+bool Cmp(const Student &a, const Student &b) {
     return a.kor + a.eng + a.math < b.kor + b.eng + b.math;
 }
 
