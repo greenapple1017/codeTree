@@ -20,7 +20,7 @@ int main() {
             int num_coin = 0;
             for (int k1 = 0; k1 < 3; k1++) {
                 for (int k2 = 0; k2 < 3; k2++) {
-                    num_coin += board[k1][k2];
+                    num_coin += board[i+k1][j+k2];
                 }
             }
             ans = max(ans, num_coin);
