@@ -18,7 +18,7 @@ int main() {
                 cout << "true\n";
             }
             else {
-                cout << "false'\n";
+                cout << "false\n";
             }
         }
         else if (cmd == "add") {
