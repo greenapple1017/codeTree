@@ -15,10 +15,10 @@ int main() {
     int local_mx = 1;
     for (int i = 0; i < n; i++) {
         if (i == 0 || arr[i] != arr[i-1]) {
-            if (local_mx >= mx) mx = local_mx;
             local_mx = 1;
         }
         else local_mx++;
+        if (local_mx >= mx) mx = local_mx;
         
     }
     cout << mx;
