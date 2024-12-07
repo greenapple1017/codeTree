@@ -51,12 +51,12 @@ void Move() {
                     next_c = j + dc[dir];
                     if (InRange(next_r, next_c) == 0) continue;
                     if (board[next_r][next_c] > local_mx) {
-                        local_max = board[next_r][next_c];
+                        local_mx = board[next_r][next_c];
                         max_next_r = next_r;
                         max_next_c = next_c;
                     }
                 }
-                next_cnt[i][j] = 0;
+                next_cnt[i][j]--; // First wrong approach: set to 0
                 next_cnt[max_next_r][max_next_c]++;
             }
         }
