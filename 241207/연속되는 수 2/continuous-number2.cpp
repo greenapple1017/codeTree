@@ -3,7 +3,7 @@ using namespace std;
 
 int n;
 int arr[1005];
-int ans;
+int mx;
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -11,11 +11,16 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
+    
+    int local_mx = 0;
     for (int i = 0; i < n; i++) {
         if (i == 0 || arr[i] != arr[i-1]) {
-            ans++;
+            if (local_mx > mx) mx = local_mx;
+            local_mx = 1;
         }
+        else local_mx++;
+        
     }
-    cout << ans;
+    cout << mx;
     return 0;
 }
