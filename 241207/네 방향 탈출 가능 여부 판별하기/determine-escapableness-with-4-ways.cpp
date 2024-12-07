@@ -19,7 +19,8 @@ int dr[4] = {-1,0,1,0};
 int dc[4] = {0,1,0,-1};
 
 inline bool InRange(int r, int c) {
-    return r >= 0 && r < n && c >= 0 && c < n;
+    return r >= 0 && r < n && c >= 0 && c < m; 
+    // n, m이 다를 때 진짜 주의... 
 }
 
 void Bfs(int r, int c) {
