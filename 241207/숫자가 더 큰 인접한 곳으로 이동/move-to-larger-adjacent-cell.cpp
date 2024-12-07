@@ -15,6 +15,7 @@ inline bool InRange(int r, int c) {
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> r >> c;
+    // Caution!! index starts at 1.
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             cin >> board[i][j];
