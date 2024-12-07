@@ -24,21 +24,18 @@ inline bool InRange(int r, int c) {
 }
 
 void Bfs(int r, int c) {
-    Point p{r,c};
-    q.push(p);
     while (!q.empty()) {
         int cur_r = q.front().r;
         int cur_c = q.front().c;
         q.pop();
-        visited[cur_r][cur_c] = 1;
         for (int dir = 0; dir < 4; dir++) {
             int next_r = cur_r + dr[dir];
             int next_c = cur_c + dc[dir];
             if (!InRange(next_r, next_c)) continue;
             if (board[next_r][next_c] == 0) continue;
             if (visited[next_r][next_c]) continue;
-            Point tmp{next_r, next_c};
-            q.push(tmp);
+            visited[cur_r][cur_c] = 1;
+            q.push({next_r, next_c});
         }
     }
 }
@@ -52,6 +49,8 @@ int main() {
         }
     }
 
+    visited[0][0] = 1;
+    q.push({0,0});
     Bfs(0,0);
     if (visited[n-1][m-1] == 1) cout << 1;
     else cout << 0;
