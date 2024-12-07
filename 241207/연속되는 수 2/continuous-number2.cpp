@@ -12,7 +12,7 @@ int main() {
         cin >> arr[i];
     }
     
-    int local_mx = 0;
+    int local_mx = 1;
     for (int i = 0; i < n; i++) {
         if (i == 0 || arr[i] != arr[i-1]) {
             if (local_mx >= mx) mx = local_mx;
