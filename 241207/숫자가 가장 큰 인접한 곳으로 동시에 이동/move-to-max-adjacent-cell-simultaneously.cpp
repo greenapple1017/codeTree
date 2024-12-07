@@ -32,14 +32,15 @@ void Move() {
                 }
                 cnt[i][j] = 0;
                 next_cnt[max_next_r][max_next_c]++;
-                if (next_cnt[max_next_r][max_next_c] >= 2) {
-                    next_cnt[max_next_r][max_next_c] = 0;
-                }
             }
         }
     }
+                    
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
+            if (next_cnt[i][j] >= 2) {
+                next_cnt[i][j] = 0;
+            }
             cnt[i][j] = next_cnt[i][j];
         }
     }
