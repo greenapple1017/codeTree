@@ -34,7 +34,7 @@ void Bfs(int r, int c) {
             if (!InRange(next_r, next_c)) continue;
             if (board[next_r][next_c] == 0) continue;
             if (visited[next_r][next_c]) continue;
-            visited[cur_r][cur_c] = 1;
+            visited[next_r][next_c] = 1;
             q.push({next_r, next_c});
         }
     }
