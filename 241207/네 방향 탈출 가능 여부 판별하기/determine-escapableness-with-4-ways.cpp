@@ -25,7 +25,6 @@ inline bool InRange(int r, int c) {
 void Bfs(int r, int c) {
     Point p{r,c};
     q.push(p);
-    visited[r][c] = 1;
     while (!q.empty()) {
         int cur_r = q.front().r;
         int cur_c = q.front().c;
