@@ -11,11 +11,36 @@ int next_cnt[MAX_N+1][MAX_N+1];
 int dr[4] = {-1,1,0,0};
 int dc[4] = {0,0,-1,1};
 
+void Debug() {
+    cout << "board: " << '\n';
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << board[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+    cout << "cnt: " << '\n';
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << cnt[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+    cout << "next_cnt: " << '\n';
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            cout << next_cnt[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+}
+
 inline bool InRange(int r, int c) {
     return r >= 1 && r <= n && c >= 1 && c <= n;
 }
 
 void Move() {
+    //Debug();
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             if (cnt[i][j] == 1) {
@@ -26,11 +51,12 @@ void Move() {
                     next_c = j + dc[dir];
                     if (InRange(next_r, next_c) == 0) continue;
                     if (board[next_r][next_c] > local_mx) {
+                        local_max = board[next_r][next_c];
                         max_next_r = next_r;
                         max_next_c = next_c;
                     }
                 }
-                cnt[i][j] = 0;
+                next_cnt[i][j] = 0;
                 next_cnt[max_next_r][max_next_c]++;
             }
         }
@@ -44,6 +70,8 @@ void Move() {
             cnt[i][j] = next_cnt[i][j];
         }
     }
+
+    //Debug();
 }
 
 int main() {
@@ -57,6 +85,7 @@ int main() {
     for (int i = 0; i < m; i++) {
         int r, c;
         cin >> r >> c;
+        next_cnt[r][c] = 1;
         cnt[r][c] = 1;
     }
     for (int i = 0; i < t; i++) {
