@@ -6,7 +6,10 @@ using namespace std;
 #define MAX_K 100
 
 int n, m;
-int max_safe_k, max_safe;
+int max_safe_k;
+// 이렇게 초기화해야지 최대 안전 영역이 0일 때 커버가능. 
+// 최대 최소 변수에서 초기값 설정을 주의하자!! 극단적 테케도. 
+int max_safe = -1; 
 
 int dr[4] = {-1,0,1,0};
 int dc[4] = {0,1,0,-1};
