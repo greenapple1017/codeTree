@@ -6,10 +6,12 @@ int arr[8];
 
 
 void f(int idx) {
-    if (idx == n-1) {
+    // n-1로 하니까 arr[n-1]이 안 정해지지. 
+    if (idx == n) {
         for (int i = 0; i < n; i++) {
             cout << arr[i] << ' ';
         }
+        cout << '\n';
         return;
     } 
     for (int i = 1; i <= k; i++) {
