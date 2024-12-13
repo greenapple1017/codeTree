@@ -10,6 +10,7 @@ void f(int idx) {
             cout << i << ' ';
         }
         cout << '\n';
+        return;
     }
 
     for (int i = n; i > 0; i--) {
