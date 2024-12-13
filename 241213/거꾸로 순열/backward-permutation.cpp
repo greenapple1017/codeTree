@@ -3,19 +3,24 @@ using namespace std;
 
 int n;
 int arr[8];
+int used[9];
 
 void f(int idx) {
     if (idx == n) {
-        for (auto i : arr) {
-            cout << i << ' ';
+        for (int i = 0; i < n; i++) {
+            cout << arr[i] << ' ';
         }
         cout << '\n';
         return;
     }
 
     for (int i = n; i > 0; i--) {
-        arr[idx] = i;
-        f(idx+1);
+        if (!used[i]) {
+            arr[idx] = i;
+            used[i] = 1;
+            f(idx+1);
+            used[i] = 0;
+        }
     }
 }
 
