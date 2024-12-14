@@ -8,11 +8,22 @@ int ans;
 
 void Select(int idx) {
     if (idx == n) {
-        for (int i = 1; i <= 4; i++) {
-            if (num_vis[i] == 0) continue;
-            if ((num_vis[i] % i) != 0) return;
+        int cur_idx = 0;
+        while (1) {
+            if (cur_idx == n) break;
+            int tmp = arr[cur_idx];
+            for (int i = 0; i < tmp; i++) {
+                if (tmp != arr[cur_idx+i]) return;
+            }
+            cur_idx += tmp;
         }
         ans++;
+        /*
+        for (int i = 0; i < n; i++) {
+            cout << arr[i] << ' ';
+        }
+        cout << '\n'; 
+        */
         return;
     }
     for (int i = 1; i <= 4; i++) {
