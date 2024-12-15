@@ -13,8 +13,17 @@ struct Point{
     int c;
 };
 
-
 queue<Point> q;
+
+void Print() {
+    cout << '\n';
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << board[i][j] << ' ';
+        }
+        cout << '\n';
+    }
+}
 
 inline bool InRange(int r, int c) {
     return r >= 0 && r < n && c >= 0 && c < n;
@@ -25,6 +34,7 @@ int main() {
     cin >> n;
     int st_r, st_c, en_r, en_c;
     cin >> st_r >> st_c >> en_r >> en_c;
+    st_r--; st_c--; en_r--; en_c--;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             board[i][j] = -1;
@@ -45,5 +55,6 @@ int main() {
         }
     }
     cout << board[en_r][en_c];
+    //Print();
     return 0;
 }
