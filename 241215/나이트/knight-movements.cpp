@@ -34,6 +34,8 @@ int main() {
     cin >> n;
     int st_r, st_c, en_r, en_c;
     cin >> st_r >> st_c >> en_r >> en_c;
+    
+    // 이거 안해줘서 처음에 틀림
     st_r--; st_c--; en_r--; en_c--;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
