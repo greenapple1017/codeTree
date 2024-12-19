@@ -6,7 +6,9 @@ using namespace std;
 
 int n, x, y;
 string board[MAX_N];
-bool visited[MAX_N][MAX_N];
+
+// 동일 칸에 '동일 방향'까지 성립되어야 순환이다..
+int visited[MAX_N][MAX_N];
 int dr[4] = {0,1,0,-1};
 int dc[4] = {1,0,-1,0};
 int total_time;
@@ -43,6 +45,7 @@ int NextState() {
         return 1;
     }
 
+    // 이런 거 조심해야된다 배열 인덱스에 음수 넣어버리는 거. 
     // 진행 방향으로 이동 불가능
     if (board[nr][nc] == '#') {
         return 0;
@@ -54,7 +57,7 @@ int NextState() {
         // 진행 방향 오른쪽 대각선 방향에 벽 없음
         if (board[diag_r][diag_c] != '#') {
             // 근데 이미 방문했음
-            if (visited[diag_r][diag_c]) {
+            if (visited[diag_r][diag_c] == ball.dir) {
                 return 2;
             }
             // 방문 안 한 곳임
@@ -97,11 +100,11 @@ int main() {
             MoveForward();
             ball.dir = (ball.dir + 1) % 4;
             MoveForward();
-            visited[ball.r][ball.c] = 1;
+            visited[ball.r][ball.c] = ball.dir;
         }
         else if (ns == 4) {
             MoveForward();
-            visited[ball.r][ball.c] = 1;
+            visited[ball.r][ball.c] = ball.dir;
         }
     }
 
