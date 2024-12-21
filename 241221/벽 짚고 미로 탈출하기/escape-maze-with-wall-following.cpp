@@ -62,7 +62,7 @@ void Simulate(){
         }    
         visited[cur_r][cur_c][cur_dir] = 1; 
     }
-    else if (!WallExist(diag_r, diag_c) && !InRange(diag_r, diag_c)) {
+    else if (!WallExist(diag_r, diag_c)) {
         cur_r = diag_r;
         cur_c = diag_c;
         cur_dir = (cur_dir + 1) % 4;
@@ -85,8 +85,11 @@ int main() {
         }
     }
     visited[cur_r][cur_c][cur_dir] = 1;
+    int debug_time = 0;
     do {
         Simulate();
         //Debug();
+        //if (debug_time > 10) return 0;
+        //debug_time++;
     } while (InRange(cur_r, cur_c));
 }
