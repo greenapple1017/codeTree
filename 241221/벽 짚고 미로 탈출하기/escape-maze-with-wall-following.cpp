@@ -43,6 +43,7 @@ void Simulate(){
 
     if (WallExist(next_r, next_c)) {
         cur_dir = (cur_dir+3) % 4;
+        visited[cur_r][cur_c][cur_dir] = 1;
     }
     else if (!InRange(next_r, next_c)) {
         cur_r = next_r;
