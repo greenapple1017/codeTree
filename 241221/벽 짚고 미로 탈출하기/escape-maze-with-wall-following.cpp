@@ -19,6 +19,21 @@ bool InRange(int r, int c) {
 bool WallExist(int r, int c) {
     return InRange(r, c) && board[r][c] =='#';
 }
+void Debug() {
+    cout << "cur_r " << cur_r << endl;
+    cout << "cur_c " << cur_c << endl;
+    cout << "cur_dir " << cur_dir << endl;
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            for (int k = 0; k < 4; k++) {
+                cout << visited[i][j][k];
+            }
+            cout << ' ';
+        }
+        cout << '\n';
+    }
+}
 
 void Simulate(){
     int next_r = cur_r + dr[cur_dir];
@@ -40,13 +55,21 @@ void Simulate(){
         cur_r = next_r;
         cur_c = next_c;
         elapsed_time++;
-        visited[cur_r][cur_c][cur_dir] = 1;        
+        if (visited[cur_r][cur_c][cur_dir]) {
+            cout << -1;
+            exit(0);
+        }    
+        visited[cur_r][cur_c][cur_dir] = 1; 
     }
     else if (!WallExist(diag_r, diag_c) && !InRange(diag_r, diag_c)) {
         cur_r = diag_r;
         cur_c = diag_c;
         cur_dir = (cur_dir + 1) % 4;
         elapsed_time += 2;
+        if (visited[cur_r][cur_c][cur_dir]) {
+            cout << -1;
+            exit(0);
+        }   
         visited[cur_r][cur_c][cur_dir] = 1; 
     }
 }
@@ -63,11 +86,6 @@ int main() {
     visited[cur_r][cur_c][cur_dir] = 1;
     do {
         Simulate();
-        if (visited[cur_r][cur_c][cur_dir]) {
-        cout << -1;
-        exit(0);
-    }
+        //Debug();
     } while (InRange(cur_r, cur_c));
-
-
 }
