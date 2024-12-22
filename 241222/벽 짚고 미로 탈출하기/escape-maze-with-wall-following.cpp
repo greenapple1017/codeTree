@@ -15,22 +15,33 @@ void Simulate();
 bool InRange(int r, int c);
 bool ExistWall(int r, int c);
 
+void Debug() {
+    cout << "cur_r, cur_c, cur_dir\n";
+    cout << cur_r << ' ' << cur_c << ' ' << cur_dir << '\n';
+}
+
 int main() {
     // 여기에 코드를 작성해주세요.
     cin >> n >> st_r >> st_c;
-    for (int i = 1; i < n; i++) {
-        for (int j = 1; j < n; j++) {
+
+    // 이걸 못봐서 1시간을 날렸네...
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
             cin >> board[i][j];
         }
     }
+    cur_r = st_r; cur_c = st_c; cur_dir = 0;
     do {
+        Simulate();
+        Debug();
         if (visited[cur_r][cur_c][cur_dir]) {
             cout << -1;
-            break;
+            exit(0);
         }
-        Simulate();
+        else {
+            visited[cur_r][cur_c][cur_dir] = 1;
+        }
     } while (InRange(cur_r, cur_c));
-
     cout << elapsed_time;
     return 0;
 }
@@ -71,6 +82,5 @@ void Simulate() {
                 elapsed_time += 2;
             }
         }
-        visited[cur_r][cur_c][cur_dir] = 1;
     }
 }
