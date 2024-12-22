@@ -33,7 +33,7 @@ int main() {
     cur_r = st_r; cur_c = st_c; cur_dir = 0;
     do {
         Simulate();
-        Debug();
+        //Debug();
         if (visited[cur_r][cur_c][cur_dir]) {
             cout << -1;
             exit(0);
