@@ -5,13 +5,12 @@ using namespace std;
 int ans;
 
 int SumDigit(int n) {
-    int t = 0;
-    int q, r;
+    int tmp = 0;
     do {
-        t += n % 10;
-        q = n / 10;
-    } while (!q);
-    return t;
+        tmp += n % 10;
+        n /= 10;
+    } while(n);
+    return tmp;
 }
 
 int main() {
