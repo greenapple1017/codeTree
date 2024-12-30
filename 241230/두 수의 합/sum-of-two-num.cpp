@@ -6,6 +6,7 @@ using namespace std;
 int n, k;
 int ans; 
 unordered_map<int, int> umap;
+int arr[MAX_N];
 
 int main() {
     cin >> n >> k;
