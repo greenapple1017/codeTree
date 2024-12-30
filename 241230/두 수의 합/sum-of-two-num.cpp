@@ -15,11 +15,12 @@ int main() {
         int complement = k-arr[i];
         ++umap[complement];
     }
-    for (int num : arr) {
+
+    for (int i = 0; i < n; i++) {
+        int num = arr[i];
         ans += umap[k-num];
-        ans /= 2;
     }
-    cout << ans;
+    cout << ans / 2;
 }
 
 /*
