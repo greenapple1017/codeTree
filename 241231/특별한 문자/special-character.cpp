@@ -14,7 +14,7 @@ int main() {
     for (auto it = freq.cbegin(); it != freq.cend(); ++it) {
         if (it->second == 1) {
             cout << it->first;
-            exit(0);
+            return 0;
         }
     }
     cout << "None";
