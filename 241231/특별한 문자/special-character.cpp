@@ -11,9 +11,18 @@ int main() {
     for (const char &c : s) {
         ++freq[c];
     }
+    /* 
+    문자열 순서다 이렇게 하면안됨
     for (auto it = freq.cbegin(); it != freq.cend(); ++it) {
         if (it->second == 1) {
             cout << it->first;
+            return 0;
+        }
+    }
+    */
+    for (const char &c : s) {
+        if (freq[c] == 1) {
+            cout << c;
             return 0;
         }
     }
