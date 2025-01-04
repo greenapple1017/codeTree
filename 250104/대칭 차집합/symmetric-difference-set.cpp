@@ -19,14 +19,15 @@ int main() {
         cin >> x;
         B.insert(x);
     }
+    unordered_set<int> tmp_A = A;
     for (int num : B) {
-        if (A.find(num) != A.end()) {
-            A.erase(num);
+        if (tmp_A.find(num) != tmp_A.end()) {
+            tmp_A.erase(num);
         }
     }
-    ans += A.size();
+    ans += tmp_A.size();
     for (int num : A) {
-        if B.find(num) != B.end()) {
+        if (B.find(num) != B.end()) {
             B.erase(num);
         }
     }
