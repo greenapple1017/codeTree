@@ -37,7 +37,7 @@ int main() {
             cout << "EMPTY\n";
         }
         else {
-            cout << s.rbegin() << ' ' << s.begin() << '\n';
+            cout << *s.rbegin() << ' ' << *s.begin() << '\n';
         }
     }
     return 0;
