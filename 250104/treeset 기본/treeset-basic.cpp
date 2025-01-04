@@ -35,7 +35,7 @@ int main() {
         else if (cmd == "lower_bound") {
             int x;
             cin >> x;
-            auto it = s.lower_bound(x)
+            auto it = s.lower_bound(x);
             if (it != s.end())
                 cout << *s.lower_bound(x) << '\n';
             else
@@ -44,7 +44,7 @@ int main() {
         else if (cmd == "upper_bound") {
             int x;
             cin >> x;
-            auto it = s.upper_bound(x)
+            auto it = s.upper_bound(x);
             if (it != s.end())
                 cout << *s.upper_bound(x) << '\n';
             else
