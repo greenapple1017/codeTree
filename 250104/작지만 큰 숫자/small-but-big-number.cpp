@@ -27,7 +27,7 @@ int main() {
         if (it == s.begin()) {
             cout << -1 << '\n';
         }
-        else 
+        else {
             --it;
             cout << *it << '\n';
             s.erase(*it);
