@@ -23,6 +23,7 @@ int main() {
         for (int i = 0; i < k; i++) {
             char cmd;
             cin >> cmd;
+            // 이 로직 떄문에 틀림
             int n;
             cin >> n;
             if (cmd == 'I') {
