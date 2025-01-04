@@ -18,9 +18,9 @@ int main() {
             if (y < um[x]) um[x] = y;
         }
     }
-    int ans = 0;
+    long long ans = 0;
     for (auto p : um) {
-        ans += p.second;
+        ans += (long long)p.second;
     }
     cout << ans;
     return 0;
