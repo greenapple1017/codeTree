@@ -35,16 +35,27 @@ int main() {
         else if (cmd == "lower_bound") {
             int x;
             cin >> x;
-            cout << *s.lower_bound(x) << '\n';
+            auto it = s.lower_bound(x)
+            if (it != s.end())
+                cout << *s.lower_bound(x) << '\n';
+            else
+                cout << "None\n";
         }
         else if (cmd == "upper_bound") {
             int x;
             cin >> x;
-            cout << *s.upper_bound(x) << '\n';
+            auto it = s.upper_bound(x)
+            if (it != s.end())
+                cout << *s.upper_bound(x) << '\n';
+            else
+                cout << "None\n";
         }
         else if (cmd == "largest") {
             if (s.empty()) cout << "None\n";
+            /* set, map, list의 iterator은 random access iterator가 아니라 bidirectional iterator이므로 +, - 연산 안됨
             else cout << *(s.end()-1) << '\n';
+            */
+            else cout << *(--s.end()) << '\n';
         }
         else if (cmd == "smallest") {
             if (s.empty()) cout << "None\n";
