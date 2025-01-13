@@ -8,23 +8,21 @@ int n;
 int num[20];
 int visited[20];
 int ans = INT_MAX;
-int sum, sum1, sum2;
+// int sum, sum1, sum2;
+int diff;
 
 void sol(int selected) {
     if (selected == n) {
-        int diff = (sum1 > sum2) ? sum1 - sum2 : sum2 - sum1;
-        ans = min(ans, diff);
+        ans = min(ans, sum - 2 * diff);
         return;
     }
     for (int i = 0; i < 2 * n; i++) {
         if (!visited[i]) {
-            sum1 += num[i];
-            sum2 -= num[i];
+            diff += 2 * num[i];
             visited[i] = 1;
             sol(selected + 1);
             visited[i] = 0;
-            sum1 -= num[i];
-            sum2 += num[i];
+            diff -= 2 * num[i];
         }
     }
 }
