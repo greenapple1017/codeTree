@@ -11,7 +11,8 @@ int sum, sum1;
 
 void sol(int selected) {
     if (selected == n) {
-        ans = min(ans, sum - sum1);
+        int diff = (sum1 > sum-sum1) ? sum1-(sum-sum1) : (sum-sum1) - sum1;
+        ans = min(ans, diff);
         return;
     }
     for (int i = 0; i < 2 * n; i++) {
