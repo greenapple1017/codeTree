@@ -8,7 +8,7 @@ int n;
 int num[20];
 int visited[20];
 int ans = INT_MAX;
-// int sum, sum1, sum2;
+int sum;
 int diff;
 
 void sol(int selected) {
