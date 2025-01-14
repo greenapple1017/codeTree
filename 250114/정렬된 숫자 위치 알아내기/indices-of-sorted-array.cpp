@@ -17,7 +17,7 @@ struct comp {
         }
         return nums[a].data < nums[b].data;
     }
-}
+};
 
 int main() {
     cin >> N;
